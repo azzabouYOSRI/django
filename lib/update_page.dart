@@ -30,7 +30,7 @@ class _UpdatePageState extends State<UpdatePage> {
           maxLines: 10,),
         ElevatedButton(onPressed: () async {
           widget.client.put(
-              updateurl(widget.id), body: {'note': _noteController.text});
+              updateurl(widget.id), body: {'body': _noteController.text});
           Navigator.pop(context);
         }, child: const Text('Update'))
       ],),
@@ -38,6 +38,6 @@ class _UpdatePageState extends State<UpdatePage> {
   }
 
   Uri updateurl(int id) {
-    return Uri.parse('http://localhost:8000/notes/update/$id/');
+    return Uri.parse('http://10.0.2.2:8000/notes/$id/');
   }
 }

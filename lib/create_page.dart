@@ -20,7 +20,7 @@ class _CreatePageState extends State<CreatePage> {
         TextField(controller: _noteController,
         maxLines: 10,),
         ElevatedButton(onPressed: () async {
-           widget.client.post(createUrl(), body: {'note': _noteController.text});
+           widget.client.post(createUrl(), body: {'body': _noteController.text});
           Navigator.pop(context);
         }, child: const Text('Create'))
       ],),
@@ -28,6 +28,6 @@ class _CreatePageState extends State<CreatePage> {
   }
 
   Uri createUrl() {
-    return Uri.parse('http://10.0.2.2:8000/notes/create/');
+    return Uri.parse('http://10.0.2.2:8000/notes/');
   }
 }
